@@ -32,11 +32,13 @@ class Player extends Entity{
         super();
         this.sprite +="char-pink-girl.png";
         this.isWin = false;
-        this.isMoving = false;
+        this.reset = false;
     }
 
     handleInput(key){
+        if(this.isWin) return;
         switch(key){
+
             case "left":
                 this.x = this.x > 0? this.x -1 : this.x;
                 break;
@@ -56,10 +58,18 @@ class Player extends Entity{
 
     update(dt){
         super.update(dt);
-        if(this.outOfBoundsY && !this.isWin){
-            alert("You win!!!!");
+        if(this.outOfBoundsY && !this.isWin && !this.reset){
+            showWinModal();
+            this.isWin = true;
+           
+        }else if(this.reset){
+            this.reset = false;
+            this.isWin = false;
+            this.x = 2;
+            this.y = 5;
         }
     }
+    
 
     
 }

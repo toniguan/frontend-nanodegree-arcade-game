@@ -29,3 +29,21 @@ document.addEventListener('keyup', function(e) {
 
     player.handleInput(allowedKeys[e.keyCode]);
 });
+
+
+
+function showWinModal(){
+  document.querySelector(".modal").style.display = "block";
+}
+  document.querySelector(".close").addEventListener('click', function() {
+    document.querySelector(".modal").style.display = "none";
+    player.reset = true;
+    
+  });
+
+  document.querySelector('.modalBtn').addEventListener('click', restartFn);
+
+  function restartFn(){
+    modal.style.display = "none";
+  
+  }
