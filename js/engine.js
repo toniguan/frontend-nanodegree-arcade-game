@@ -23,7 +23,7 @@ var Engine = (function(global) {
         canvas = doc.createElement('canvas'),
         ctx = canvas.getContext('2d'),
         lastTime;
-
+  
     canvas.width = 505;
     canvas.height = 606;
     doc.body.appendChild(canvas);
@@ -151,6 +151,8 @@ var Engine = (function(global) {
         }
 
         renderEntities();
+        ctx.font = "28px Verdana";
+        ctx.fillText(`Level ${gamelevel+1}`, 202,78);
     }
 
     /* This function is called by the render function and is called on each game

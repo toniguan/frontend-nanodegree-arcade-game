@@ -1,12 +1,17 @@
+
+
+
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
-const enemyCount = 3;
+let gamelevel = 0;
+
 var allEnemies = [];
 
 function generateEnemies(){
+  allEnemies = [];
   let enm;
-  for(let i = 0; i < enemyCount; i++){
-    enm = new Enemy(Math.floor(Math.random()*5), i+1);
+  for(let i = 0; i < gamelevel/3+3; i++){
+    enm = new Enemy(Math.floor(Math.random()*5), i%3+1, gamelevel);
     allEnemies.push(enm);
   }
 }
@@ -28,22 +33,27 @@ document.addEventListener('keyup', function(e) {
     };
 
     player.handleInput(allowedKeys[e.keyCode]);
+   
 });
-
 
 
 function showWinModal(){
   document.querySelector(".modal").style.display = "block";
 }
-  document.querySelector(".close").addEventListener('click', function() {
-    document.querySelector(".modal").style.display = "none";
-    player.reset = true;
-    
-  });
 
-  document.querySelector('.modalBtn').addEventListener('click', restartFn);
-
-  function restartFn(){
-    modal.style.display = "none";
-  
+document.addEventListener('click', function(e){
+  let cname = e.target.className;
+  if(cname != 'close' && cname !='modalBtn') return;
+  if(cname == 'modalBtn') {
+    gamelevel++;
   }
+    
+  document.querySelector(".modal").style.display = "none";
+  player.reset = true;
+  generateEnemies();
+  console.log(`${allEnemies.length}   ${gamelevel}`);
+
+  
+  
+});
+

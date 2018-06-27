@@ -1,7 +1,7 @@
 class Entity{
     constructor(){
         this.x = 2;
-        this.y = 5;
+        this.y = 5;//default player pos
         this.sprite = "images/";
 
     }
@@ -18,7 +18,7 @@ class Entity{
 
     isCollision(entity){
         if(this.y === entity.y){
-            if(this.x >= entity.x-0.4 &&  this.x <= entity.x+0.4){
+            if(this.x >= entity.x-0.5 &&  this.x <= entity.x+0.5){
                 return true;
             }
             return false;
@@ -75,12 +75,12 @@ class Player extends Entity{
 }
 
 class Enemy extends Entity{
-    constructor(x, y){
+    constructor(x, y, gamelevel){
         super();
         this.sprite +="enemy-bug.png";
         this.x = x;
         this.y = y;
-        this.speed = Math.random();
+        this.speed = Math.random()* (1+gamelevel);
     }
     update(dt){
         super.update(dt);
