@@ -70,8 +70,6 @@ class Player extends Entity{
         }
     }
     
-
-    
 }
 
 class Enemy extends Entity{

@@ -4,9 +4,8 @@
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 let gamelevel = 0;
-
 var allEnemies = [];
-
+//create enemies based on game level
 function generateEnemies(){
   allEnemies = [];
   let enm;
@@ -51,7 +50,7 @@ document.addEventListener('click', function(e){
   document.querySelector(".modal").style.display = "none";
   player.reset = true;
   generateEnemies();
-  console.log(`${allEnemies.length}   ${gamelevel}`);
+  //console.log(`${allEnemies.length}   ${gamelevel}`);
 
   
   

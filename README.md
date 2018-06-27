@@ -12,11 +12,11 @@ frontend-nanodegree-arcade-game
 ## How to run
 
 1. go to GitHub [game repository](https://github.com/toniguan/frontend-nanodegree-arcade-game)
-2. click "Clone or download" menu and select "Download Zip"
-3. in your Download folder, find the downloaded zip file "frontend-nanodegree-arcade-game-master.zip"
-4. unzip the zip file, you get a new folder "frontend-nanodegree-arcade-game-master"
-5. in the folder, locate the index.html file
-6. open the index.html in any browser
+2. click **Clone or download** menu and select **Download Zip**
+3. in your Download folder, find the downloaded zip file *frontend-nanodegree-arcade-game-master.zip*
+4. unzip the zip file, you get a new folder *frontend-nanodegree-arcade-game-master*
+5. in the folder, locate *index.html* file
+6. open *index.html* in any browser
 7. the game is started
 
 ## How to play

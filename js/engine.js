@@ -86,7 +86,7 @@ var Engine = (function(global) {
         for(let i  =0; i < allEnemies.length; i++){
             let enm = allEnemies[i];
             if(enm.isCollision(player) || player.isCollision(enm) ){
-                console.log("collision happened");
+              // reset player to the starting square when collision happens
                 player.x = 2;
                 player.y = 5;
             }
@@ -151,6 +151,7 @@ var Engine = (function(global) {
         }
 
         renderEntities();
+        //print game level 
         ctx.font = "28px Verdana";
         ctx.fillText(`Level ${gamelevel+1}`, 202,78);
     }
